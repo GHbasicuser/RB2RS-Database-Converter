@@ -4,7 +4,7 @@ This Windows PowerShell Script converts the latest radio station database from R
 
 ![](https://zupimages.net/up/22/20/isdj.png)
 
-* Usage : ./RB2RS-converter.ps1
+* Usage (must be configured before use) : ./RB2RS-converter.ps1
 * This script should be used with a local MariaDB server & 7zip.
 * Recommended PowerShell version : 7 (and above) 
 
