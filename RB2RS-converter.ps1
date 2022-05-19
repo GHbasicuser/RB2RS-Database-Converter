@@ -13,7 +13,7 @@ $destination = "D:\temp" # Local directory to generate tmp files and ".rsd"
 $7zprogram = "C:\Program Files\7-Zip\7z.exe"
 #------------------------------------------------------------------------------#
 # Local database access settings (MariaDB)
-$RBHost = "127.0.0.1"
+$RBHost = "localhost"
 $RBPort = "3306"
 $RBUser = "**********"
 $RBPassword = "**********"
@@ -40,7 +40,8 @@ if(Test-Path -Path $7zprogram){
 }
 # Importing the database on the local MariaDB server 
 $fName = dir $destination\backup*.sql | select BaseName,Extension
-$fileName = $fName.BaseName + $fName.Extension 
+$fileName = $fName.BaseName + $fName.Extension
+if (!$fileName) {Write-Error "Problem : SQL source does not exist." -ErrorAction Stop}
 Get-Content $destination\$filename | mysql -f --host=$RBHost --port=$RBPort --user=$RBUser --password=$RBPassword $RBBase
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #    Small cleaning to obtain a correct final result.     #
