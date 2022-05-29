@@ -8,4 +8,8 @@ This Windows PowerShell Script converts the latest radio station database from R
 * This script should be used with a local MariaDB server & 7zip.
 * Recommended PowerShell version : 7 (and above) 
 
-Note : The resulting zip file can be placed on an online server, so my other script RB2RS-database-Updater (VBScript) can be used to find and install it automatically.
+Note : The resulting zip file can be placed on an online server, so my other script RB2RS-database-Updater (VBScript) can be used to download and install it automatically.
+
+--------------------------------------
+Additional information : 
+* "Table 'radios.stationcheckhistory' doesn't exist" is a Radio-Browser issue which will surely be fixed soon : https://github.com/segler-alex/radiobrowser-api-rust/issues/137 (It has no impact.)
